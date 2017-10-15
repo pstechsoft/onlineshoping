@@ -63,6 +63,12 @@
 			<c:if test="${userClickContact==true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
+
+			<!-- Loads only when user clicks All Products -->
+			<c:if
+				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
 		</div>
 
 		<!-- Footer comes Here-->
@@ -72,8 +78,8 @@
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/popper.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
-		
-		
+
+
 
 		<!-- Self coded javascript file -->
 		<script src="${js}/myapp.js"></script>

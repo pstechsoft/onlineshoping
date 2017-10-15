@@ -6,6 +6,7 @@ import com.app.shopingbackend.dto.Category;
 
 public interface CategoryDAO {
 	
-	List<Category> list();
-
+	public List<Category> list();
+	
+	public Category get(int id);
 }
