@@ -7,13 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.app.shopingbackend.dao.CategoryDAO;
+import com.app.shopingbackend.dao.ProductDAO;
 import com.app.shopingbackend.dto.Category;
+import com.app.shopingbackend.dto.Product;
 
 @Controller
 public class PageController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private ProductDAO productDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -76,5 +81,20 @@ public class PageController {
 		
 		
 		return mv;
+	}
+	
+	//Fetching a single product
+	@RequestMapping(value="/show/{id}/product")
+	public ModelAndView showSingleProduct(@PathVariable("id")int id){
+		ModelAndView mv = new ModelAndView("page");
+		
+		Product product = productDAO.get(id);
+		
+		//update the view count
+		mv.addObject("title", product.getName());
+		mv.addObject("product", product);
+		mv.addObject("userClickShowProduct", true);
+		return mv;
+		
 	}
 }
