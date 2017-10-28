@@ -10,10 +10,9 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Activate Annotated Classes -->
-	<context:component-scan base-package="com.app.onlineshoping.controller" />
-	<context:component-scan base-package="com.app.shopingbackend.daoimpl" />
-	<context:component-scan base-package="com.app.shopingbackend.config" />
-
+	<context:component-scan base-package="com.app.onlineshoping" />
+	<context:component-scan base-package="com.app.shopingbackend" />
+	
 	<!-- Activate view Resolver -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

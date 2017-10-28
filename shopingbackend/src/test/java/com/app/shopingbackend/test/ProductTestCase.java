@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.app.shopingbackend.dao.ProductDAO;
-import com.app.shopingbackend.dto.Product;
+//import com.app.shopingbackend.dto.Product;
 
 public class ProductTestCase {
 
@@ -17,7 +17,7 @@ private static AnnotationConfigApplicationContext context;
 	private static ProductDAO productDAO;
 	
 	
-	private Product product;
+	//private Product product;
 	
 	
 	@BeforeClass
